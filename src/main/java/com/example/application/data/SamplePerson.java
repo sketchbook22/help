@@ -13,8 +13,7 @@ public class SamplePerson extends AbstractEntity {
     @JoinColumn(name="ape")
     private Ape ape;
 
-    @JsonManagedReference
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "zooKeeper")
+
     private Set<Bat> bats;
     private String c;
     private String d;
@@ -26,6 +25,9 @@ public class SamplePerson extends AbstractEntity {
     public void setApe(Ape value) {
         this.ape = value;
     }
+
+    @JsonManagedReference
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "zooKeeper")
     public Set<Bat> getBats() {
         return bats;
     }
