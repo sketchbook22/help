@@ -42,14 +42,11 @@ public class MasterDetailView extends Div implements BeforeEnterObserver {
 
     private final Grid<SamplePerson> grid = new Grid<>(SamplePerson.class, false);
 
-    private TextField firstName;
-    private TextField lastName;
-    private TextField email;
-    private TextField phone;
-    private DatePicker dateOfBirth;
-    private TextField occupation;
-    private TextField role;
-    private Checkbox important;
+    private TextField apeColor;
+    private TextField b;
+    private TextField c;
+    private TextField d;
+    private TextField e;
 
     private final Button cancel = new Button("Cancel");
     private final Button save = new Button("Save");
@@ -73,21 +70,12 @@ public class MasterDetailView extends Div implements BeforeEnterObserver {
         add(splitLayout);
 
         // Configure Grid
-        grid.addColumn("firstName").setAutoWidth(true);
-        grid.addColumn("lastName").setAutoWidth(true);
-        grid.addColumn("email").setAutoWidth(true);
-        grid.addColumn("phone").setAutoWidth(true);
-        grid.addColumn("dateOfBirth").setAutoWidth(true);
-        grid.addColumn("occupation").setAutoWidth(true);
-        grid.addColumn("role").setAutoWidth(true);
-        LitRenderer<SamplePerson> importantRenderer = LitRenderer.<SamplePerson>of(
-                "<vaadin-icon icon='vaadin:${item.icon}' style='width: var(--lumo-icon-size-s); height: var(--lumo-icon-size-s); color: ${item.color};'></vaadin-icon>")
-                .withProperty("icon", important -> important.isImportant() ? "check" : "minus").withProperty("color",
-                        important -> important.isImportant()
-                                ? "var(--lumo-primary-text-color)"
-                                : "var(--lumo-disabled-text-color)");
+        grid.addColumn("ape.color").setHeader("Ape Color").setAutoWidth(true);
+        grid.addColumn("b").setAutoWidth(true);
+        grid.addColumn("c").setAutoWidth(true);
+        grid.addColumn("d").setAutoWidth(true);
+        grid.addColumn("e").setAutoWidth(true);
 
-        grid.addColumn(importantRenderer).setHeader("Important").setAutoWidth(true);
 
         grid.setItems(query -> samplePersonService.list(
                 PageRequest.of(query.getPage(), query.getPageSize(), VaadinSpringDataHelpers.toSpringDataSort(query)))
@@ -166,15 +154,12 @@ public class MasterDetailView extends Div implements BeforeEnterObserver {
         editorLayoutDiv.add(editorDiv);
 
         FormLayout formLayout = new FormLayout();
-        firstName = new TextField("First Name");
-        lastName = new TextField("Last Name");
-        email = new TextField("Email");
-        phone = new TextField("Phone");
-        dateOfBirth = new DatePicker("Date Of Birth");
-        occupation = new TextField("Occupation");
-        role = new TextField("Role");
-        important = new Checkbox("Important");
-        formLayout.add(firstName, lastName, email, phone, dateOfBirth, occupation, role, important);
+        apeColor = new TextField("Ape Color");
+        b = new TextField("b");
+        c = new TextField("c");
+        d = new TextField("d");
+        e = new TextField("e");
+        formLayout.add(apeColor, b, c, d, e);
 
         editorDiv.add(formLayout);
         createButtonLayout(editorLayoutDiv);
