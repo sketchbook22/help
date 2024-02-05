@@ -43,7 +43,7 @@ public class MasterDetailView extends Div implements BeforeEnterObserver {
     private final Grid<SamplePerson> grid = new Grid<>(SamplePerson.class, false);
 
     private TextField apeColor;
-    private TextField b;
+    private TextField batColors;
     private TextField c;
     private TextField d;
     private TextField e;
@@ -155,11 +155,11 @@ public class MasterDetailView extends Div implements BeforeEnterObserver {
 
         FormLayout formLayout = new FormLayout();
         apeColor = new TextField("Ape Color");
-        b = new TextField("b");
+        batColors = new TextField("Bat Colors");
         c = new TextField("c");
         d = new TextField("d");
         e = new TextField("e");
-        formLayout.add(apeColor, b, c, d, e);
+        formLayout.add(apeColor, batColors, c, d, e);
 
         editorDiv.add(formLayout);
         createButtonLayout(editorLayoutDiv);

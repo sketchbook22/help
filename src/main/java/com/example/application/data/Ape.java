@@ -21,6 +21,6 @@ public class Ape extends AbstractEntity {
     public void setColor(String value) {
         this.color = value;
     }
-	
+
 
 }

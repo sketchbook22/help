@@ -1,10 +1,10 @@
 package com.example.application.data;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 public class SamplePerson extends AbstractEntity {
@@ -12,7 +12,10 @@ public class SamplePerson extends AbstractEntity {
     @OneToOne(targetEntity = Ape.class)
     @JoinColumn(name="ape")
     private Ape ape;
-    private String b;
+
+    @JsonManagedReference
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "zooKeeper")
+    private Set<Bat> bats;
     private String c;
     private String d;
     private String e;
@@ -23,11 +26,11 @@ public class SamplePerson extends AbstractEntity {
     public void setApe(Ape value) {
         this.ape = value;
     }
-    public String getB() {
-        return b;
+    public Set<Bat> getBats() {
+        return bats;
     }
-    public void setB(String value) {
-        this.b = value;
+    public void setBats(Set<Bat> value) {
+        this.bats = value;
     }
     public String getC() {
         return c;
