@@ -17,6 +17,9 @@ public class Bat extends AbstractEntity {
 
 	private String color;
 
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "zookeeper")
     private SamplePerson zooKeeper;
     public String getColor() {
         return color;
@@ -25,9 +28,7 @@ public class Bat extends AbstractEntity {
         this.color = value;
     }
 
-    @JsonBackReference
-    @ManyToOne
-    @JoinColumn(name = "SAMPlE_PERSON_ID", referencedColumnName = "SAMPLE_PERSON_ID", nullable = false)
+
     public SamplePerson getZooKeeper() {
         return zooKeeper;
     }

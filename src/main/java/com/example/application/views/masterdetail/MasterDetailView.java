@@ -7,6 +7,7 @@ import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.checkbox.Checkbox;
+import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.dependency.Uses;
 import com.vaadin.flow.component.formlayout.FormLayout;
@@ -42,8 +43,8 @@ public class MasterDetailView extends Div implements BeforeEnterObserver {
 
     private final Grid<SamplePerson> grid = new Grid<>(SamplePerson.class, false);
 
-    private TextField apeColor;
-    private TextField batColors;
+    private TextField ape_color;
+    private ComboBox<String> batColors;
     private TextField c;
     private TextField d;
     private TextField e;
@@ -71,7 +72,7 @@ public class MasterDetailView extends Div implements BeforeEnterObserver {
 
         // Configure Grid
         grid.addColumn("ape.color").setHeader("Ape Color").setAutoWidth(true);
-        grid.addColumn("b").setAutoWidth(true);
+        grid.addColumn("favoriteBatColor").setAutoWidth(true);
         grid.addColumn("c").setAutoWidth(true);
         grid.addColumn("d").setAutoWidth(true);
         grid.addColumn("e").setAutoWidth(true);
@@ -94,6 +95,10 @@ public class MasterDetailView extends Div implements BeforeEnterObserver {
 
         // Configure Form
         binder = new BeanValidationBinder<>(SamplePerson.class);
+
+        binder.bind(ape_color,
+                samplePerson -> samplePerson.getApe().getColor(),
+                (samplePerson, value) -> samplePerson.getApe().setColor(value));
 
         // Bind fields. This is where you'd define e.g. validation rules
 
@@ -154,12 +159,14 @@ public class MasterDetailView extends Div implements BeforeEnterObserver {
         editorLayoutDiv.add(editorDiv);
 
         FormLayout formLayout = new FormLayout();
-        apeColor = new TextField("Ape Color");
-        batColors = new TextField("Bat Colors");
+        ape_color = new TextField("Ape Color");
+        batColors = new ComboBox<>("Bat Colors");
         c = new TextField("c");
         d = new TextField("d");
         e = new TextField("e");
-        formLayout.add(apeColor, batColors, c, d, e);
+        batColors.setItems("black","brown","white","blue","red");
+
+        formLayout.add(ape_color, batColors, c, d, e);
 
         editorDiv.add(formLayout);
         createButtonLayout(editorLayoutDiv);

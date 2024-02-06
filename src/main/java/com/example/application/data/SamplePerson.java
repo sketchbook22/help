@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -13,8 +15,11 @@ public class SamplePerson extends AbstractEntity {
     @JoinColumn(name="ape")
     private Ape ape;
 
-
+    @JsonManagedReference
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "zooKeeper")
     private Set<Bat> bats;
+
+    private String favoriteBatColor;
     private String c;
     private String d;
     private String e;
@@ -26,13 +31,18 @@ public class SamplePerson extends AbstractEntity {
         this.ape = value;
     }
 
-    @JsonManagedReference
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "zooKeeper")
+
     public Set<Bat> getBats() {
         return bats;
     }
     public void setBats(Set<Bat> value) {
         this.bats = value;
+    }
+    public String getFavoriteBatColor(){
+        return favoriteBatColor;
+    }
+    public void setFavoriteBatColor(String value){
+        this.favoriteBatColor = value;
     }
     public String getC() {
         return c;
