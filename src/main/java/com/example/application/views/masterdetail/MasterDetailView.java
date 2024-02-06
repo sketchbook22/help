@@ -45,7 +45,7 @@ public class MasterDetailView extends Div implements BeforeEnterObserver {
 
     private TextField ape_color;
     private ComboBox<String> batColors;
-    private TextField c;
+    //private TextField c;
     private TextField d;
     private TextField e;
 
@@ -73,7 +73,7 @@ public class MasterDetailView extends Div implements BeforeEnterObserver {
         // Configure Grid
         grid.addColumn("ape.color").setHeader("Ape Color").setAutoWidth(true);
         grid.addColumn("favoriteBatColor").setAutoWidth(true);
-        grid.addColumn("c").setAutoWidth(true);
+        //grid.addColumn("c").setAutoWidth(true);
         grid.addColumn("d").setAutoWidth(true);
         grid.addColumn("e").setAutoWidth(true);
 
@@ -161,12 +161,12 @@ public class MasterDetailView extends Div implements BeforeEnterObserver {
         FormLayout formLayout = new FormLayout();
         ape_color = new TextField("Ape Color");
         batColors = new ComboBox<>("Bat Colors");
-        c = new TextField("c");
+        //c = new TextField("c");
         d = new TextField("d");
         e = new TextField("e");
         batColors.setItems("black","brown","white","blue","red");
 
-        formLayout.add(ape_color, batColors, c, d, e);
+        formLayout.add(ape_color, batColors, /*c,*/ d, e);
 
         editorDiv.add(formLayout);
         createButtonLayout(editorLayoutDiv);
