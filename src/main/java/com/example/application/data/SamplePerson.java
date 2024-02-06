@@ -20,7 +20,14 @@ public class SamplePerson extends AbstractEntity {
     private Set<Bat> bats;
 
     private String favoriteBatColor;
-    private String c;
+    @JsonManagedReference
+    @ManyToMany
+    @JoinTable(
+            name = "CAR_DRIVER_ASSOC",
+            joinColumns = {@JoinColumn(name="CAR_ID")},
+            inverseJoinColumns = {@JoinColumn(name="ID")}
+    )
+    private Set<Car> cars;
     private String d;
     private String e;
 
@@ -44,11 +51,11 @@ public class SamplePerson extends AbstractEntity {
     public void setFavoriteBatColor(String value){
         this.favoriteBatColor = value;
     }
-    public String getC() {
-        return c;
+    public Set<Car> getCars() {
+        return cars;
     }
-    public void setC(String value) {
-        this.c = value;
+    public void setCars(Set<Car> value) {
+        this.cars = value;
     }
     public String getD() {
         return d;

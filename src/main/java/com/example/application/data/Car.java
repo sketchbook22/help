@@ -15,11 +15,20 @@ public class Car extends AbstractEntity {
 
 	private String color;
 
+    @JsonBackReference
+    @ManyToMany(mappedBy="cars")
+    private Set<SamplePerson> drivers;
+
     public String getColor() {
         return color;
     }
     public void setColor(String value) {
         this.color = value;
+    }
+
+    public Set<SamplePerson> getDrivers() { return drivers;}
+    public void setDrivers(Set<SamplePerson> value){
+        this.drivers = value;
     }
 
 }
