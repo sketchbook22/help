@@ -19,15 +19,11 @@ public class SamplePerson extends AbstractEntity {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "zooKeeper")
     private Set<Bat> bats;
 
-    private String favoriteBatColor;
+    private String favoriteBatColor = "soup";
+
     @JsonManagedReference
-    @ManyToMany
-    @JoinTable(
-            name = "CAR_DRIVER_ASSOC",
-            joinColumns = {@JoinColumn(name="CAR_ID")},
-            inverseJoinColumns = {@JoinColumn(name="ID")}
-    )
-    private Set<Car> cars;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "samplePerson")
+    private Set<SamplePersonAssocCar> cars;
     private String d;
     private String e;
 
@@ -45,16 +41,37 @@ public class SamplePerson extends AbstractEntity {
     public void setBats(Set<Bat> value) {
         this.bats = value;
     }
+
+    public List<String> getAllBatColors(){
+        List<String> re = new ArrayList<String>();
+        bats.forEach((bat) -> {
+            re.add(bat.getColor());
+        });
+        return re;
+    }
+    public String getAllBatColorsCsv(){
+        return getAllBatColors().toString();
+    }
+    public List<String> getAllCarColors(){
+        List<String> re = new ArrayList<String>();
+        cars.forEach((car) -> {
+            re.add(car.getCar().getColor());
+        });
+        return re;
+    }
+    public String getAllCarColorsCsv(){
+        return getAllCarColors().toString();
+    }
     public String getFavoriteBatColor(){
         return favoriteBatColor;
     }
     public void setFavoriteBatColor(String value){
         this.favoriteBatColor = value;
     }
-    public Set<Car> getCars() {
+    public Set<SamplePersonAssocCar> getCars() {
         return cars;
     }
-    public void setCars(Set<Car> value) {
+    public void setCars(Set<SamplePersonAssocCar> value) {
         this.cars = value;
     }
     public String getD() {

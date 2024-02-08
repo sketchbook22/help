@@ -1,6 +1,7 @@
 package com.example.application.data;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import org.hibernate.annotations.LazyCollection;
@@ -15,9 +16,9 @@ public class Car extends AbstractEntity {
 
 	private String color;
 
-    @JsonBackReference
-    @ManyToMany(mappedBy="cars")
-    private Set<SamplePerson> drivers;
+    @JsonManagedReference
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "car")
+    private Set<SamplePersonAssocCar> drivers;
 
     public String getColor() {
         return color;
@@ -26,8 +27,8 @@ public class Car extends AbstractEntity {
         this.color = value;
     }
 
-    public Set<SamplePerson> getDrivers() { return drivers;}
-    public void setDrivers(Set<SamplePerson> value){
+    public Set<SamplePersonAssocCar> getDrivers() { return drivers;}
+    public void setDrivers(Set<SamplePersonAssocCar> value){
         this.drivers = value;
     }
 

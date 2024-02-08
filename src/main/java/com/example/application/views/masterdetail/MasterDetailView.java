@@ -29,6 +29,8 @@ import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.data.VaadinSpringDataHelpers;
+
+import java.util.List;
 import java.util.Optional;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.orm.ObjectOptimisticLockingFailureException;
@@ -45,6 +47,10 @@ public class MasterDetailView extends Div implements BeforeEnterObserver {
 
     private TextField ape_color;
     private ComboBox<String> batColors;
+
+    //private List<String> allBatColors;
+    private TextField allBatColorsCsv;
+    private TextField allCarColorsCsv;
     //private TextField c;
     private TextField d;
     private TextField e;
@@ -74,6 +80,9 @@ public class MasterDetailView extends Div implements BeforeEnterObserver {
         grid.addColumn("ape.color").setHeader("Ape Color").setAutoWidth(true);
         grid.addColumn("favoriteBatColor").setAutoWidth(true);
         //grid.addColumn("c").setAutoWidth(true);
+        //grid.addColumn("allBatColorsCsv").setAutoWidth(true);
+        grid.addColumn("allBatColorsCsv").setAutoWidth(true);
+        grid.addColumn("allCarColorsCsv").setAutoWidth(true);
         grid.addColumn("d").setAutoWidth(true);
         grid.addColumn("e").setAutoWidth(true);
 
@@ -99,6 +108,7 @@ public class MasterDetailView extends Div implements BeforeEnterObserver {
         binder.bind(ape_color,
                 samplePerson -> samplePerson.getApe().getColor(),
                 (samplePerson, value) -> samplePerson.getApe().setColor(value));
+
 
         // Bind fields. This is where you'd define e.g. validation rules
 
@@ -160,13 +170,21 @@ public class MasterDetailView extends Div implements BeforeEnterObserver {
 
         FormLayout formLayout = new FormLayout();
         ape_color = new TextField("Ape Color");
+        //allBatColorsCsv = new TextField("allBatColorsCsv");
         batColors = new ComboBox<>("Bat Colors");
+        //2//allBatColors = new ComboBox<>("All Bat Colors");
         //c = new TextField("c");
         d = new TextField("d");
         e = new TextField("e");
-        batColors.setItems("black","brown","white","blue","red");
 
-        formLayout.add(ape_color, batColors, /*c,*/ d, e);
+
+        if(samplePerson!=null) {
+            String allBatColorsCsv = samplePerson.getAllBatColorsCsv();
+            String[] allBatColors = allBatColorsCsv.split(",");
+            batColors.setItems(allBatColors);
+        }
+
+        formLayout.add(ape_color, batColors, d, e);
 
         editorDiv.add(formLayout);
         createButtonLayout(editorLayoutDiv);

@@ -1,0 +1,351 @@
+2024-02-07 11:28:15.882196-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "CURRENT_VALUE" not found; SQL statement:
+SELECT sequence_name, 'START WITH '||(current_value+1) FROM INFORMATION_SCHEMA.sequences WHERE sequence_schema='PUBLIC' [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.BinaryOperation.optimize(BinaryOperation.java:131)
+	at org.h2.expression.ConcatenationOperation.determineType(ConcatenationOperation.java:201)
+	at org.h2.expression.ConcatenationOperation.optimize(ConcatenationOperation.java:141)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1170)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:93)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:316)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.SelectStatement.a(SelectStatement.java:107)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.SelectStatement.a(SelectStatement.java:73)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.SelectStatement.j(SelectStatement.java:93)
+	at com.wisecoders.dbs.dbms.Dbms.listSequences(Dbms.java:455)
+	at com.wisecoders.dbs.dbms.reverseEngineer.model.StructureImporter.a(StructureImporter.java:66)
+	at com.wisecoders.dbs.dbms.reverseEngineer.model.StructureImporter.<init>(StructureImporter.java:21)
+	at com.wisecoders.dbs.dbms.reverseEngineer.fx.FxImportStructureTask$1.<init>(FxImportStructureTask.java:40)
+	at com.wisecoders.dbs.dbms.reverseEngineer.fx.FxImportStructureTask.a(FxImportStructureTask.java:40)
+	at com.wisecoders.dbs.dbms.reverseEngineer.fx.FxImportStructureTask.call(FxImportStructureTask.java:14)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2024-02-07 11:28:21.099524-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "CURRENT_VALUE" not found; SQL statement:
+SELECT sequence_name, 'START WITH '||(current_value+1) FROM INFORMATION_SCHEMA.sequences WHERE sequence_schema='INFORMATION_SCHEMA' [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.BinaryOperation.optimize(BinaryOperation.java:131)
+	at org.h2.expression.ConcatenationOperation.determineType(ConcatenationOperation.java:201)
+	at org.h2.expression.ConcatenationOperation.optimize(ConcatenationOperation.java:141)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1170)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:93)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:316)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.SelectStatement.a(SelectStatement.java:107)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.SelectStatement.a(SelectStatement.java:73)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.SelectStatement.j(SelectStatement.java:93)
+	at com.wisecoders.dbs.dbms.Dbms.listSequences(Dbms.java:455)
+	at com.wisecoders.dbs.dbms.reverseEngineer.model.StructureImporter.a(StructureImporter.java:66)
+	at com.wisecoders.dbs.dbms.reverseEngineer.model.StructureImporter.<init>(StructureImporter.java:21)
+	at com.wisecoders.dbs.dbms.reverseEngineer.fx.FxImportStructureTask$1.<init>(FxImportStructureTask.java:40)
+	at com.wisecoders.dbs.dbms.reverseEngineer.fx.FxImportStructureTask.a(FxImportStructureTask.java:40)
+	at com.wisecoders.dbs.dbms.reverseEngineer.fx.FxImportStructureTask.call(FxImportStructureTask.java:14)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2024-02-07 11:28:25.639456-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CONSTRAINTS" not found (this database is empty); SQL statement:
+SELECT table_name, constraint_name, check_expression FROM INFORMATION_SCHEMA.constraints WHERE check_expression IS NOT NULL AND constraint_schema='INFORMATION_SCHEMA' [42104-224]
+2024-02-07 11:28:25.646635-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CONSTRAINTS" not found (this database is empty); SQL statement:
+SELECT table_name, constraint_name, check_expression FROM INFORMATION_SCHEMA.constraints WHERE check_expression IS NOT NULL AND constraint_schema='PUBLIC' [42104-224]
+2024-02-07 11:32:55.785523-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "CURRENT_VALUE" not found; SQL statement:
+SELECT sequence_name, 'START WITH '||(current_value+1) FROM INFORMATION_SCHEMA.sequences WHERE sequence_schema='PUBLIC' [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.BinaryOperation.optimize(BinaryOperation.java:131)
+	at org.h2.expression.ConcatenationOperation.determineType(ConcatenationOperation.java:201)
+	at org.h2.expression.ConcatenationOperation.optimize(ConcatenationOperation.java:141)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1170)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:93)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:316)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.SelectStatement.a(SelectStatement.java:107)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.SelectStatement.a(SelectStatement.java:73)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.SelectStatement.j(SelectStatement.java:93)
+	at com.wisecoders.dbs.dbms.Dbms.listSequences(Dbms.java:455)
+	at com.wisecoders.dbs.dbms.reverseEngineer.model.StructureImporter.a(StructureImporter.java:66)
+	at com.wisecoders.dbs.dbms.reverseEngineer.model.StructureImporter.<init>(StructureImporter.java:21)
+	at com.wisecoders.dbs.dbms.reverseEngineer.fx.FxImportStructureTask$1.<init>(FxImportStructureTask.java:40)
+	at com.wisecoders.dbs.dbms.reverseEngineer.fx.FxImportStructureTask.a(FxImportStructureTask.java:40)
+	at com.wisecoders.dbs.dbms.reverseEngineer.fx.FxImportStructureTask.call(FxImportStructureTask.java:14)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2024-02-07 11:32:57.856766-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CONSTRAINTS" not found (this database is empty); SQL statement:
+SELECT table_name, constraint_name, check_expression FROM INFORMATION_SCHEMA.constraints WHERE check_expression IS NOT NULL AND constraint_schema='PUBLIC' [42104-224]
+2024-02-07 11:50:58.893274-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Constraint "PRIMARY KEY | UNIQUE (CONFIDENCE_CITY_LEVEL)" not found; SQL statement:
+ALTER TABLE "PUBLIC".truck ADD CONSTRAINT fk_truck_location FOREIGN KEY ( id ) REFERENCES "PUBLIC".location( confidence_city_level ) ON DELETE NO ACTION ON UPDATE NO ACTION [90057-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:259)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:74)
+	at org.h2.command.ddl.AlterTable.update(AlterTable.java:46)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:196)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:147)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.UpdateStatement.a(UpdateStatement.java:42)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.Envoy.g(Envoy.java:363)
+	at com.wisecoders.dbs.dbms.sync.engine.nodes.SyncPair.a(SyncPair.java:493)
+	at com.wisecoders.dbs.dbms.sync.engine.nodes.EditorSyncRoot.a(EditorSyncRoot.java:34)
+	at com.wisecoders.dbs.dialogs.layout.d.a(FxDbDialog.java:144)
+	at com.wisecoders.dbs.dialogs.layout.d.call(FxDbDialog.java:125)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2024-02-07 11:53:45.754873-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "CURRENT_VALUE" not found; SQL statement:
+SELECT sequence_name, 'START WITH '||(current_value+1) FROM INFORMATION_SCHEMA.sequences WHERE sequence_schema='PUBLIC' [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.BinaryOperation.optimize(BinaryOperation.java:131)
+	at org.h2.expression.ConcatenationOperation.determineType(ConcatenationOperation.java:201)
+	at org.h2.expression.ConcatenationOperation.optimize(ConcatenationOperation.java:141)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1170)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:93)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:316)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.SelectStatement.a(SelectStatement.java:107)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.SelectStatement.a(SelectStatement.java:73)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.SelectStatement.j(SelectStatement.java:93)
+	at com.wisecoders.dbs.dbms.Dbms.listSequences(Dbms.java:455)
+	at com.wisecoders.dbs.dbms.reverseEngineer.model.StructureImporter.a(StructureImporter.java:66)
+	at com.wisecoders.dbs.dbms.reverseEngineer.model.StructureImporter.<init>(StructureImporter.java:21)
+	at com.wisecoders.dbs.dbms.reverseEngineer.fx.FxSynchronizationTask.a(FxSynchronizationTask.java:102)
+	at com.wisecoders.dbs.dbms.reverseEngineer.fx.FxSynchronizationTask.call(FxSynchronizationTask.java:35)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2024-02-07 11:53:45.789905-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CONSTRAINTS" not found; SQL statement:
+SELECT table_name, constraint_name, check_expression FROM INFORMATION_SCHEMA.constraints WHERE check_expression IS NOT NULL AND constraint_schema='PUBLIC' [42102-224]
+2024-02-07 12:15:39.285923-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE ""PUBLIC"".settings ( \000a\0009id                   INTEGER   NOT NULL,\000a\0009[*]year                 VARCHAR(100)   NOT NULL,\000a\0009delivery_date_id     INTEGER   ,\000a\0009max_distance         INTEGER   ,\000a\0009credit_per_donation_dollar INTEGER  DEFAULT 1 NOT NULL,\000a\0009credit_limit         INTEGER   NOT NULL,\000a\0009CONSTRAINT pk_settings PRIMARY KEY ( id )\000a ) "; expected "identifier"; SQL statement:
+CREATE TABLE "PUBLIC".settings ( 
+	id                   INTEGER   NOT NULL,
+	year                 VARCHAR(100)   NOT NULL,
+	delivery_date_id     INTEGER   ,
+	max_distance         INTEGER   ,
+	credit_per_donation_dollar INTEGER  DEFAULT 1 NOT NULL,
+	credit_limit         INTEGER   NOT NULL,
+	CONSTRAINT pk_settings PRIMARY KEY ( id )
+ )  [42001-224]
+2024-02-07 12:16:13.309985-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE ""PUBLIC"".settings ( \000a\0009id                   INTEGER   NOT NULL,\000a\0009[*]year                 VARCHAR(100)   NOT NULL,\000a\0009delivery_date_id     INTEGER   ,\000a\0009max_distance         INTEGER   ,\000a\0009credit_per_donation_dollar INTEGER   NOT NULL,\000a\0009credit_limit         INTEGER   NOT NULL,\000a\0009CONSTRAINT pk_settings PRIMARY KEY ( id )\000a ) "; expected "identifier"; SQL statement:
+CREATE TABLE "PUBLIC".settings ( 
+	id                   INTEGER   NOT NULL,
+	year                 VARCHAR(100)   NOT NULL,
+	delivery_date_id     INTEGER   ,
+	max_distance         INTEGER   ,
+	credit_per_donation_dollar INTEGER   NOT NULL,
+	credit_limit         INTEGER   NOT NULL,
+	CONSTRAINT pk_settings PRIMARY KEY ( id )
+ )  [42001-224]
+2024-02-07 12:16:53.517553-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE ""PUBLIC"".settings ( \000a\0009id                   INTEGER   NOT NULL,\000a\0009[*]year                 VARCHAR(100)   NOT NULL,\000a\0009delivery_date_id     INTEGER   ,\000a\0009max_distance         INTEGER   ,\000a\0009credit_limit         INTEGER   NOT NULL,\000a\0009CONSTRAINT pk_settings PRIMARY KEY ( id )\000a ) "; expected "identifier"; SQL statement:
+CREATE TABLE "PUBLIC".settings ( 
+	id                   INTEGER   NOT NULL,
+	year                 VARCHAR(100)   NOT NULL,
+	delivery_date_id     INTEGER   ,
+	max_distance         INTEGER   ,
+	credit_limit         INTEGER   NOT NULL,
+	CONSTRAINT pk_settings PRIMARY KEY ( id )
+ )  [42001-224]
+2024-02-07 12:17:14.293162-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE ""PUBLIC"".settings ADD [*]year VARCHAR(100)   "; expected "identifier"; SQL statement:
+ALTER TABLE "PUBLIC".settings ADD year VARCHAR(100)    [42001-224]
+2024-02-07 12:34:39.151661-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Constraint "PRIMARY KEY | UNIQUE (GOOD_DELIVERY_DATE_ID)" not found; SQL statement:
+ALTER TABLE "PUBLIC".purchase_order_good_delivery_date_assoc ADD CONSTRAINT fk_purchase_order_good_delivery_date_assoc_purchase_order FOREIGN KEY ( purchase_order_id ) REFERENCES "PUBLIC".purchase_order( good_delivery_date_id ) ON DELETE NO ACTION ON UPDATE NO ACTION [90057-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:259)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:74)
+	at org.h2.command.ddl.AlterTable.update(AlterTable.java:46)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:196)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:147)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.UpdateStatement.a(UpdateStatement.java:42)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.Envoy.g(Envoy.java:363)
+	at com.wisecoders.dbs.dbms.sync.engine.nodes.SyncPair.a(SyncPair.java:493)
+	at com.wisecoders.dbs.dbms.sync.engine.nodes.EditorSyncRoot.a(EditorSyncRoot.java:34)
+	at com.wisecoders.dbs.dialogs.layout.d.a(FxDbDialog.java:144)
+	at com.wisecoders.dbs.dialogs.layout.d.call(FxDbDialog.java:125)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2024-02-07 12:35:12.937845-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Constraint "PRIMARY KEY | UNIQUE (GOOD_DELIVERY_DATE_ID)" not found; SQL statement:
+ALTER TABLE "PUBLIC".purchase_order_good_delivery_date_assoc ADD CONSTRAINT fk_purchase_order_good_delivery_date_assoc_purchase_order FOREIGN KEY ( purchase_order_id ) REFERENCES "PUBLIC".purchase_order( good_delivery_date_id ) ON DELETE NO ACTION ON UPDATE NO ACTION [90057-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:259)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:74)
+	at org.h2.command.ddl.AlterTable.update(AlterTable.java:46)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:196)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:147)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.UpdateStatement.a(UpdateStatement.java:42)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.Envoy.g(Envoy.java:363)
+	at com.wisecoders.dbs.dbms.sync.engine.nodes.SyncPair.a(SyncPair.java:493)
+	at com.wisecoders.dbs.dbms.sync.engine.nodes.EditorSyncRoot.a(EditorSyncRoot.java:34)
+	at com.wisecoders.dbs.dialogs.layout.d.a(FxDbDialog.java:144)
+	at com.wisecoders.dbs.dialogs.layout.d.call(FxDbDialog.java:125)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2024-02-07 12:35:46.637881-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Constraint "PRIMARY KEY | UNIQUE (GOOD_DELIVERY_DATE_ID)" not found; SQL statement:
+ALTER TABLE "PUBLIC".purchase_order_good_delivery_date_assoc ADD CONSTRAINT fk_purchase_order_good_delivery_date_assoc_purchase_order FOREIGN KEY ( purchase_order_id ) REFERENCES "PUBLIC".purchase_order( good_delivery_date_id ) ON DELETE NO ACTION ON UPDATE NO ACTION [90057-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:259)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:74)
+	at org.h2.command.ddl.AlterTable.update(AlterTable.java:46)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:196)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:147)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.UpdateStatement.a(UpdateStatement.java:42)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.Envoy.g(Envoy.java:363)
+	at com.wisecoders.dbs.dbms.sync.engine.nodes.SyncPair.a(SyncPair.java:493)
+	at com.wisecoders.dbs.dbms.sync.engine.nodes.EditorSyncRoot.a(EditorSyncRoot.java:34)
+	at com.wisecoders.dbs.dialogs.layout.d.a(FxDbDialog.java:144)
+	at com.wisecoders.dbs.dialogs.layout.d.call(FxDbDialog.java:125)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2024-02-07 12:36:13.361965-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Constraint "PRIMARY KEY | UNIQUE (GOOD_DELIVERY_DATE_ID)" not found; SQL statement:
+ALTER TABLE "PUBLIC".purchase_order_good_delivery_date_assoc ADD CONSTRAINT fk_purchase_order_good_delivery_date_assoc_purchase_order FOREIGN KEY ( purchase_order_id ) REFERENCES "PUBLIC".purchase_order( good_delivery_date_id ) ON DELETE NO ACTION ON UPDATE NO ACTION [90057-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:259)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:74)
+	at org.h2.command.ddl.AlterTable.update(AlterTable.java:46)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:196)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:147)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.UpdateStatement.a(UpdateStatement.java:42)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.Envoy.g(Envoy.java:363)
+	at com.wisecoders.dbs.dbms.sync.engine.nodes.SyncPair.a(SyncPair.java:493)
+	at com.wisecoders.dbs.dbms.sync.engine.nodes.EditorSyncRoot.a(EditorSyncRoot.java:34)
+	at com.wisecoders.dbs.dialogs.layout.d.a(FxDbDialog.java:144)
+	at com.wisecoders.dbs.dialogs.layout.d.call(FxDbDialog.java:125)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2024-02-07 22:08:18.208849-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Cannot truncate "PUBLIC.CONTACT"; SQL statement:
+TRUNCATE TABLE "PUBLIC".contact [90106-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.ddl.TruncateTable.update(TruncateTable.java:42)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:196)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:147)
+	at com.wisecoders.dbs.dbms.connect.model.envoy.UpdateStatement.a(UpdateStatement.java:42)
+	at com.wisecoders.dbs.generator.engine.tasks.FxGeneratorTask.a(FxGeneratorTask.java:54)
+	at com.wisecoders.dbs.generator.engine.tasks.FxGeneratorTask.call(FxGeneratorTask.java:15)
+	at javafx.graphics/javafx.concurrent.Task$TaskCallable.call(Task.java:1426)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
